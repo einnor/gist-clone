@@ -1,7 +1,13 @@
 import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 
 export default class GistsInfoService extends Service {
-  gists = [
+  
+  get numberOfGists () {
+    return this.gists.length;
+  }
+
+  @tracked gists = [
     {
       fileName: 'example.hbs',
       description: 'Just an example',
@@ -19,4 +25,8 @@ export default class GistsInfoService extends Service {
       `
     },
   ];
+
+  addGist (gist) {
+    this.gists.addObject(gist);
+  }
 }
