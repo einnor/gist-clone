@@ -1,0 +1,15 @@
+<div class="main-code-box">
+  {{#each this.gistsInfo.gists as |gist|}}
+    <div class="file-block">
+      <div class="file-header">
+        <h2>{{gist.description}}</h2>
+        <small>{{gist.fileName}}</small>
+      </div>
+      <div class="code-box">
+        <CodeBlock @language="javascript">
+          {{gist.body}}
+        </CodeBlock>
+      </div>
+    </div>
+  {{/each}}
+</div>
