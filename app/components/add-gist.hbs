@@ -15,7 +15,7 @@
         onchange={{action (mut this.body) value="target.value"}}></textarea>
     </div>
     <div class="gist-button-wrapper">
-      <button onclick={{action this.addFile this.body this.description this.fileName}} class="gist-button">Add file</button>
+      <button onclick={{action @addFile this.body this.description this.fileName}} class="gist-button">Add file</button>
     </div>
   </div>
 </div>
