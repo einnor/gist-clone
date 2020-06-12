@@ -13,5 +13,6 @@ export default class AddGistController extends Controller {
       description,
       fileName,
     });
+    this.transitionToRoute('index');
   }
 }
