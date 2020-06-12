@@ -2,17 +2,19 @@
   {{if this.snapped "unsnap" "snap"}}
 </button>
 <div class="main-code-box">
-  {{#animated-each this.shownGists use=transition as |gist|}}
-    <div class="file-block">
-      <div class="file-header">
-        <h2>{{gist.description}}</h2>
-        <small>{{gist.fileName}}</small>
+  <AnimatedContainer>
+    {{#animated-each this.shownGists use=transition as |gist|}}
+      <div class="file-block">
+        <div class="file-header">
+          <h2>{{gist.description}}</h2>
+          <small>{{gist.fileName}}</small>
+        </div>
+        <div class="code-box">
+          <CodeBlock @language="javascript">
+            {{gist.body}}
+          </CodeBlock>
+        </div>
       </div>
-      <div class="code-box">
-        <CodeBlock @language="javascript">
-          {{gist.body}}
-        </CodeBlock>
-      </div>
-    </div>
-  {{/animated-each}}
+    {{/animated-each}}
+  </AnimatedContainer>
 </div>
